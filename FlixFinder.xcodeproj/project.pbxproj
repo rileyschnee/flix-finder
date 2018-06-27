@@ -8,24 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		BEEF6A3920E4014A001DEC97 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEF6A3820E4014A001DEC97 /* AppDelegate.m */; };
-		BEEF6A3C20E4014A001DEC97 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEF6A3B20E4014A001DEC97 /* ViewController.m */; };
 		BEEF6A3F20E4014A001DEC97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEEF6A3D20E4014A001DEC97 /* Main.storyboard */; };
 		BEEF6A4120E4014B001DEC97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEEF6A4020E4014B001DEC97 /* Assets.xcassets */; };
 		BEEF6A4420E4014B001DEC97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEEF6A4220E4014B001DEC97 /* LaunchScreen.storyboard */; };
 		BEEF6A4720E4014B001DEC97 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEF6A4620E4014B001DEC97 /* main.m */; };
+		BEEF6A4F20E4102E001DEC97 /* MoviesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEF6A4E20E4102E001DEC97 /* MoviesViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BEEF6A3420E4014A001DEC97 /* FlixFinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlixFinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEEF6A3720E4014A001DEC97 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BEEF6A3820E4014A001DEC97 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		BEEF6A3A20E4014A001DEC97 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		BEEF6A3B20E4014A001DEC97 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		BEEF6A3E20E4014A001DEC97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BEEF6A4020E4014B001DEC97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BEEF6A4320E4014B001DEC97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BEEF6A4520E4014B001DEC97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEEF6A4620E4014B001DEC97 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BEEF6A4D20E4102E001DEC97 /* MoviesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoviesViewController.h; sourceTree = "<group>"; };
+		BEEF6A4E20E4102E001DEC97 /* MoviesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoviesViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +58,13 @@
 		BEEF6A3620E4014A001DEC97 /* FlixFinder */ = {
 			isa = PBXGroup;
 			children = (
+				BEEF6A5220E4110B001DEC97 /* Views */,
+				BEEF6A5120E41103001DEC97 /* View Controllers */,
+				BEEF6A5020E410FE001DEC97 /* Models */,
 				BEEF6A3720E4014A001DEC97 /* AppDelegate.h */,
+				BEEF6A4D20E4102E001DEC97 /* MoviesViewController.h */,
+				BEEF6A4E20E4102E001DEC97 /* MoviesViewController.m */,
 				BEEF6A3820E4014A001DEC97 /* AppDelegate.m */,
-				BEEF6A3A20E4014A001DEC97 /* ViewController.h */,
-				BEEF6A3B20E4014A001DEC97 /* ViewController.m */,
 				BEEF6A3D20E4014A001DEC97 /* Main.storyboard */,
 				BEEF6A4020E4014B001DEC97 /* Assets.xcassets */,
 				BEEF6A4220E4014B001DEC97 /* LaunchScreen.storyboard */,
@@ -69,6 +72,27 @@
 				BEEF6A4620E4014B001DEC97 /* main.m */,
 			);
 			path = FlixFinder;
+			sourceTree = "<group>";
+		};
+		BEEF6A5020E410FE001DEC97 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BEEF6A5120E41103001DEC97 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		BEEF6A5220E4110B001DEC97 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,9 +165,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEEF6A3C20E4014A001DEC97 /* ViewController.m in Sources */,
 				BEEF6A4720E4014B001DEC97 /* main.m in Sources */,
 				BEEF6A3920E4014A001DEC97 /* AppDelegate.m in Sources */,
+				BEEF6A4F20E4102E001DEC97 /* MoviesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
