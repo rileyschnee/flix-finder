@@ -24,10 +24,20 @@
     self.collectionView.delegate = self;
     [self fetchMovies];
     
+    UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
+    //layout.minimumInteritemSpacing = 5;
+    //layout.minimumLineSpacing = 5;
+    
+    CGFloat postersPerLine = 2;
+    //CGFloat itemWidth = (self.collectionView.frame.size.width - layout.minimumInteritemSpacing * (postersPerLine - 1)) / postersPerLine;
+    CGFloat itemWidth = self.collectionView.frame.size.width / postersPerLine;
+    CGFloat itemHeight = 1.5 * itemWidth;
+    layout.itemSize = CGSizeMake(itemWidth, itemHeight);
+    
 }
 - (void)fetchMovies {
     // Make network call here!
-    NSURL *url = [NSURL URLWithString:@"https://api.themoviedb.org/3/movie/now_playing?api_key=68e66492655ae4158df702fc167d958f"];
+    NSURL *url = [NSURL URLWithString:@"https://api.themoviedb.org/3/movie/upcoming?api_key=68e66492655ae4158df702fc167d958f"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {

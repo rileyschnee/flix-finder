@@ -36,6 +36,7 @@
     [self.refreshControl addTarget:self action:@selector(fetchMovies) forControlEvents:UIControlEventValueChanged];
     
     [self.tableView insertSubview:self.refreshControl atIndex:0];
+
     //[self.tableView addSubview:self.refreshControl];
 
 }
@@ -46,20 +47,21 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+
         if (error != nil) {
             NSLog(@"%@", [error localizedDescription]);
             //Create alert
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Cannot Get Movies" message:@"The Internet connection appears to be offline" preferredStyle:(UIAlertControllerStyleAlert)];
+           UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Cannot Get Movies" message:@"The Internet connection appears to be offline" preferredStyle:(UIAlertControllerStyleAlert)];
             // create an OK action
-            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                 // handle response here.
-
             }];
             // add the OK action to the alert controller
             [alert addAction:okAction];
             
             [self presentViewController:alert animated:YES completion:^{
                 // optional code for what happens after the alert controller has finished presenting
+                [self.refreshControl endRefreshing];
 
             }];
             
@@ -75,10 +77,11 @@
                 NSLog(@"%@", movie[@"title"]);
             }
             [self.tableView reloadData];
+            [self.refreshControl endRefreshing];
 
         }
-        [self.refreshControl endRefreshing];
         [self.activityIndicator stopAnimating];
+        
     }];
     [task resume];
 

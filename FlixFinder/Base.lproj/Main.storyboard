@@ -173,7 +173,7 @@
             </objects>
             <point key="canvasLocation" x="1809" y="-724"/>
         </scene>
-        <!--Movies Grid View Controller-->
+        <!--Coming Soon-->
         <scene sceneID="gJd-Mv-v7A">
             <objects>
                 <viewController id="MV6-7g-LZr" customClass="MoviesGridViewController" sceneMemberID="viewController">
@@ -184,8 +184,8 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Oej-Hx-Fa9">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dvH-lm-Olw">
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="dvH-lm-Olw">
                                     <size key="itemSize" width="129" height="198"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -201,7 +201,7 @@
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cRD-Rz-fVf">
                                                     <rect key="frame" x="0.0" y="0.0" width="129" height="198"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
@@ -215,7 +215,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="pvd-ce-rka"/>
                     </view>
-                    <navigationItem key="navigationItem" id="4Qg-Vm-O9r"/>
+                    <navigationItem key="navigationItem" title="Coming Soon" id="4Qg-Vm-O9r"/>
                     <connections>
                         <outlet property="collectionView" destination="Oej-Hx-Fa9" id="hYl-vs-Jd9"/>
                     </connections>
