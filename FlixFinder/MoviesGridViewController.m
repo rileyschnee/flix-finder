@@ -11,9 +11,12 @@
 #import "UIImageView+AFNetworking.h"
 #import "DetailsViewController.h"
 
-@interface MoviesGridViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface MoviesGridViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UISearchBarDelegate>
 @property (nonatomic, strong) NSArray *movies;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (strong, nonatomic) NSArray *filteredData;
+
 
 @end
 
@@ -23,8 +26,10 @@
     [super viewDidLoad];
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
-    [self fetchMovies];
+    self.searchBar.delegate = self;
     
+    [self fetchMovies];
+
     UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
     //layout.minimumInteritemSpacing = 5;
     //layout.minimumLineSpacing = 5;
@@ -34,6 +39,7 @@
     CGFloat itemWidth = self.collectionView.frame.size.width / postersPerLine;
     CGFloat itemHeight = 1.5 * itemWidth;
     layout.itemSize = CGSizeMake(itemWidth, itemHeight);
+    
     
 }
 - (void)fetchMovies {
@@ -66,6 +72,8 @@
             // TODO: Store the movies in a property to use elsewhere
             // TODO: Reload your table view data
             self.movies = dataDictionary[@"results"];
+            self.filteredData = self.movies;
+
             [self.collectionView reloadData];
         }
     }];
@@ -86,7 +94,7 @@
     // Pass the selected object to the new view controller.
     UICollectionViewCell  *tappedCell = sender;
     NSIndexPath *indexPath = [self.collectionView indexPathForCell:tappedCell];
-    NSDictionary *movie = self.movies[indexPath.row];
+    NSDictionary *movie = self.filteredData[indexPath.row];
     
     DetailsViewController *detailsViewController = [segue destinationViewController];
     detailsViewController.movie = movie;
@@ -95,7 +103,7 @@
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     MovieCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MovieCollectionCell" forIndexPath:indexPath];
-    NSDictionary *movie = self.movies[indexPath.item];
+    NSDictionary *movie = self.filteredData[indexPath.item];
 
     NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
     NSString *posterURLString = movie[@"poster_path"];
@@ -107,7 +115,36 @@
 }
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.movies.count;
+    return self.filteredData.count;
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    if (searchText.length != 0) {
+        
+        
+        self.filteredData = [self.movies filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"(title contains[c] %@)", searchText]];
+        
+        NSLog(@"%@", self.filteredData);
+        
+    }
+    else {
+        self.filteredData = self.movies;
+    }
+    
+    [self.collectionView reloadData];
+}
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
+    self.searchBar.showsCancelButton = YES;
+}
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+    self.filteredData = self.movies;
+    [self.collectionView reloadData];
+    
+    self.searchBar.showsCancelButton = NO;
+    self.searchBar.text = @"";
+    [self.searchBar resignFirstResponder];
 }
 
 
