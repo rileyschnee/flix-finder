@@ -7,11 +7,14 @@
 //
 
 #import "MoviesViewController.h"
+#import "MovieCell.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface MoviesViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSArray *movies;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 @end
 
@@ -23,7 +26,19 @@
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    self.title = @"Flix Finder";
     
+    [self fetchMovies];
+    
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(fetchMovies) forControlEvents:UIControlEventValueChanged];
+    
+    [self.tableView insertSubview:self.refreshControl atIndex:0];
+    //[self.tableView addSubview:self.refreshControl];
+
+}
+
+- (void)fetchMovies {
     // Make network call here!
     NSURL *url = [NSURL URLWithString:@"https://api.themoviedb.org/3/movie/now_playing?api_key=68e66492655ae4158df702fc167d958f"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
@@ -43,9 +58,8 @@
                 NSLog(@"%@", movie[@"title"]);
             }
             [self.tableView reloadData];
-            
-            
         }
+        [self.refreshControl endRefreshing];
     }];
     [task resume];
 }
@@ -60,12 +74,19 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [[UITableViewCell alloc] init];
+    
+    MovieCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MovieCell"];
     
     NSDictionary *movie = self.movies[indexPath.row];
     
-    cell.textLabel.text = movie[@"title"];
-    
+    cell.titleLabel.text = movie[@"title"];
+    cell.synopsisLabel.text = movie[@"overview"];
+    NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
+    NSString *posterURLString = movie[@"poster_path"];
+    NSString *fullPosterURLString = [baseURLString stringByAppendingString:posterURLString];
+    NSURL *posterURL = [NSURL URLWithString:fullPosterURLString];
+    cell.posterView.image = nil;
+    [cell.posterView setImageWithURL:posterURL];
     return cell;
 }
 
