@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Movies View Controller-->
+        <!--Movies-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MoviesViewController" sceneMemberID="viewController">
@@ -54,6 +54,7 @@
                                             <outlet property="posterView" destination="P45-QD-QlW" id="2gw-dl-PWq"/>
                                             <outlet property="synopsisLabel" destination="EGz-xd-O1v" id="7Zc-Hl-EXo"/>
                                             <outlet property="titleLabel" destination="lRB-Xc-3OD" id="08G-gO-l1W"/>
+                                            <segue destination="fRz-ne-xDL" kind="show" id="LkX-5a-0GZ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -62,7 +63,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="La8-O5-IEg"/>
+                    <navigationItem key="navigationItem" title="Movies" id="La8-O5-IEg"/>
                     <connections>
                         <outlet property="tableView" destination="5lC-xb-tTu" id="QtW-7T-Z0i"/>
                     </connections>
@@ -70,6 +71,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="850.39999999999998" y="-663.41829085457277"/>
+        </scene>
+        <!--Details View Controller-->
+        <scene sceneID="nMx-eK-R7Y">
+            <objects>
+                <viewController id="fRz-ne-xDL" customClass="DetailsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="t6E-x1-J8h">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fix-Lh-cF7">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w1Z-78-dih">
+                                        <rect key="frame" x="0.0" y="-64" width="375" height="256"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uBg-2e-qcW">
+                                        <rect key="frame" x="8" y="109" width="110" height="166"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O2R-9c-l68">
+                                        <rect key="frame" x="8" y="284" width="359" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RrU-0M-zU3">
+                                        <rect key="frame" x="126" y="200" width="241" height="75"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="0Ea-yp-JVb"/>
+                    </view>
+                    <connections>
+                        <outlet property="backdropView" destination="w1Z-78-dih" id="y2z-3U-PLI"/>
+                        <outlet property="posterView" destination="uBg-2e-qcW" id="9hP-22-Zur"/>
+                        <outlet property="synopsisLabel" destination="O2R-9c-l68" id="uIp-Wm-IOR"/>
+                        <outlet property="titleLabel" destination="RrU-0M-zU3" id="LDd-ok-w0i"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DuV-SH-8Oy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1597.5999999999999" y="-663.41829085457277"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XNf-wK-BOj">
