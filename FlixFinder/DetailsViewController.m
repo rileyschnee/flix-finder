@@ -10,13 +10,13 @@
 #import "UIImageView+AFNetworking.h"
 
 @interface DetailsViewController ()
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIImageView *backdropView;
 @property (weak, nonatomic) IBOutlet UIImageView *posterView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *synopsisLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
-
 @end
 
 @implementation DetailsViewController
@@ -35,20 +35,81 @@
     [self.dateLabel sizeToFit];
     [self.scoreLabel sizeToFit];
     
+    // Scrolling Functionality
+    CGFloat maxHeight = self.synopsisLabel.frame.origin.y + self.synopsisLabel.frame.size.height + 20.0;
+    self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width, maxHeight);
+    
     
     //Backdrop
     NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
     NSString *backdropURLString = self.movie[@"backdrop_path"];
     NSString *fullBackdropURLString = [baseURLString stringByAppendingString:backdropURLString];
     NSURL *backdropURL = [NSURL URLWithString:fullBackdropURLString];
-    [self.backdropView setImageWithURL:backdropURL];
+    
+    NSURLRequest *requestBackdrop = [NSURLRequest requestWithURL:backdropURL];
+
+    // fade transition
+    [self.backdropView setImageWithURLRequest:requestBackdrop placeholderImage:nil
+                                    success:^(NSURLRequest *imageRequest, NSHTTPURLResponse *imageResponse, UIImage *image) {
+                                        
+                                        // imageResponse will be nil if the image is cached
+                                        //if (imageResponse) {
+                                        NSLog(@"Image was NOT cached, fade in image");
+                                        self.backdropView.alpha = 0.0;
+                                        self.backdropView.image = image;
+                                        
+                                        //Animate UIImageView back to alpha 1 over 0.3sec
+                                        [UIView animateWithDuration:0.2 animations:^{
+                                            self.backdropView.alpha = 1.0;
+                                        }];
+                                        /*}
+                                         else {
+                                         NSLog(@"Image was cached so just update the image");
+                                         weakSelf.posterView.image = image;
+                                         }*/
+                                    }
+                                    failure:^(NSURLRequest *request, NSHTTPURLResponse * response, NSError *error) {
+                                        // do something for the failure condition
+                                    }];
+    
+    
+    // old way, no fade transition
+    //[self.backdropView setImageWithURL:backdropURL];
     
     
     //Poster
     NSString *posterURLString = self.movie[@"poster_path"];
     NSString *fullPosterURLString = [baseURLString stringByAppendingString:posterURLString];
     NSURL *posterURL = [NSURL URLWithString:fullPosterURLString];
-    [self.posterView setImageWithURL:posterURL];
+    
+    NSURLRequest *requestPoster = [NSURLRequest requestWithURL:posterURL];
+    // fade transition
+    [self.posterView setImageWithURLRequest:requestPoster placeholderImage:nil
+                                    success:^(NSURLRequest *imageRequest, NSHTTPURLResponse *imageResponse, UIImage *image) {
+                                        
+                                        // imageResponse will be nil if the image is cached
+                                        //if (imageResponse) {
+                                        NSLog(@"Image was NOT cached, fade in image");
+                                        self.posterView.alpha = 0.0;
+                                        self.posterView.image = image;
+                                        
+                                        //Animate UIImageView back to alpha 1 over 0.3sec
+                                        [UIView animateWithDuration:0.2 animations:^{
+                                            self.posterView.alpha = 1.0;
+                                        }];
+                                        /*}
+                                         else {
+                                         NSLog(@"Image was cached so just update the image");
+                                         weakSelf.posterView.image = image;
+                                         }*/
+                                    }
+                                    failure:^(NSURLRequest *request, NSHTTPURLResponse * response, NSError *error) {
+                                        // do something for the failure condition
+                                    }];
+    
+    
+    // old way, no fade transition
+    //[self.posterView setImageWithURL:posterURL];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--In Theaters-->
+        <!--Now Playing-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MoviesViewController" sceneMemberID="viewController">
@@ -73,7 +73,7 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="In Theaters" id="La8-O5-IEg"/>
+                    <navigationItem key="navigationItem" title="Now Playing" id="La8-O5-IEg"/>
                     <connections>
                         <outlet property="activityIndicator" destination="f1M-XN-bJd" id="AOL-cb-EQg"/>
                         <outlet property="tableView" destination="5lC-xb-tTu" id="QtW-7T-Z0i"/>
@@ -110,9 +110,9 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O2R-9c-l68">
-                                        <rect key="frame" x="8" y="347" width="359" height="21"/>
+                                        <rect key="frame" x="8" y="358" width="359" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -126,7 +126,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qc4-gC-DAK">
                                         <rect key="frame" x="125" y="312" width="127" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -149,6 +149,7 @@
                         <outlet property="dateLabel" destination="qc4-gC-DAK" id="GTn-2D-O30"/>
                         <outlet property="posterView" destination="uBg-2e-qcW" id="9hP-22-Zur"/>
                         <outlet property="scoreLabel" destination="jhG-d6-g7p" id="pdZ-La-o0B"/>
+                        <outlet property="scrollView" destination="Fix-Lh-cF7" id="0jM-jE-JBM"/>
                         <outlet property="synopsisLabel" destination="O2R-9c-l68" id="uIp-Wm-IOR"/>
                         <outlet property="titleLabel" destination="RrU-0M-zU3" id="LDd-ok-w0i"/>
                     </connections>
@@ -292,7 +293,7 @@
         <image name="reel_tabbar_icon" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="LkX-5a-0GZ"/>
+        <segue reference="rna-fP-5gB"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
