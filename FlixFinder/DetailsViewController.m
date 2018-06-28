@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *posterView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *synopsisLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 
 @end
 
@@ -25,8 +27,13 @@
     
     self.titleLabel.text = self.movie[@"title"];
     self.synopsisLabel.text = self.movie[@"overview"];
+    self.dateLabel.text = self.movie[@"release_date"];
+    double movieScore = [self.movie[@"vote_average"] doubleValue];
+    self.scoreLabel.text = [NSString stringWithFormat: @"%.0f", movieScore];
     [self.titleLabel sizeToFit];
     [self.synopsisLabel sizeToFit];
+    [self.dateLabel sizeToFit];
+    [self.scoreLabel sizeToFit];
     
     
     //Backdrop
