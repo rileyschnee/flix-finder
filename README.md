@@ -8,26 +8,27 @@ Time spent: **X** hours spent in total
 
 The following **required** functionality is complete:
 
-- [ ] User can view a list of movies currently playing in theaters from The Movie Database.
-- [ ] Poster images are loaded using the UIImageView category in the AFNetworking library.
-- [ ] User sees a loading state while waiting for the movies API.
-- [ ] User can pull to refresh the movie list.
+x [ ] User can view a list of movies currently playing in theaters from The Movie Database.
+x [ ] Poster images are loaded using the UIImageView category in the AFNetworking library.
+x [ ] User sees a loading state while waiting for the movies API.
+x [ ] User can pull to refresh the movie list.
 
 The following **optional** features are implemented:
 
-- [ ] User sees an error message when there's a networking error.
-- [ ] Movies are displayed using a CollectionView instead of a TableView.
-- [ ] User can search for a movie.
-- [ ] All images fade in as they are loading.
+x [ ] User sees an error message when there's a networking error.
+x [ ] Movies are displayed using a CollectionView instead of a TableView.
+x [ ] User can search for a movie.
+x [ ] All images fade in as they are loading.
 - [ ] User can view the large movie poster by tapping on a cell.
 - [ ] For the large poster, load the low resolution image first and then switch to the high resolution image when complete.
-- [ ] Customize the selection effect of the cell.
-- [ ] Customize the navigation bar.
-- [ ] Customize the UI.
+x [ ] Customize the selection effect of the cell.
+x [ ] Customize the navigation bar.
+x [ ] Customize the UI.
 
 The following **additional** features are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality!
+x [ ] User can see release date and average rating on details page.
+x [ ] User sees placeholder images while waiting for movie images to load.
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
@@ -50,13 +51,16 @@ Describe any challenges encountered while building the app.
 
 List an 3rd party libraries, icons, graphics, or other assets you used in your app.
 
+Poster Placeholder Image: http://www.theprintworks.com/film/raazi/
+Backdrop Placeholder Image: https://www.omao.noaa.gov/find/media/video/noaa-ships-oscar-elton-sette-and-rainier-dry-docking
+
 - [AFNetworking](https://github.com/AFNetworking/AFNetworking) - networking task library
 
 This product uses the TMDb API but is not endorsed or certified by TMDb.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright 2018 Riley Schnee
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
