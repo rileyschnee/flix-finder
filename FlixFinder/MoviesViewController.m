@@ -31,7 +31,6 @@
     
     [self.activityIndicator startAnimating];
     [self fetchMovies];
-    [self.activityIndicator stopAnimating];
 
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(fetchMovies) forControlEvents:UIControlEventValueChanged];
@@ -61,6 +60,7 @@
             
             [self presentViewController:alert animated:YES completion:^{
                 // optional code for what happens after the alert controller has finished presenting
+
             }];
             
         }
@@ -75,10 +75,13 @@
                 NSLog(@"%@", movie[@"title"]);
             }
             [self.tableView reloadData];
+
         }
         [self.refreshControl endRefreshing];
+        [self.activityIndicator stopAnimating];
     }];
     [task resume];
+
 }
 
 - (void)didReceiveMemoryWarning {
