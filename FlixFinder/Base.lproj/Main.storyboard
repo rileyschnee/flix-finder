@@ -207,6 +207,7 @@
                                         </view>
                                         <connections>
                                             <outlet property="posterView" destination="cRD-Rz-fVf" id="JjD-Za-tzP"/>
+                                            <segue destination="fRz-ne-xDL" kind="show" id="rna-fP-5gB"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -248,5 +249,8 @@
         <image name="now_playing_tabbar_item" width="21" height="21"/>
         <image name="reel_tabbar_icon" width="25" height="25"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="rna-fP-5gB"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
