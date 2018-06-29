@@ -8,6 +8,7 @@
 
 #import "DetailsViewController.h"
 #import "UIImageView+AFNetworking.h"
+#import "PosterViewController.h"
 
 @interface DetailsViewController ()
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -34,7 +35,12 @@
     [self.synopsisLabel sizeToFit];
     [self.dateLabel sizeToFit];
     [self.scoreLabel sizeToFit];
-    
+    if(movieScore >= 10.0){
+        self.scoreLabel.frame = CGRectMake(288.0, self.scoreLabel.frame.origin.y,
+            self.scoreLabel.frame.size.width,
+            self.scoreLabel.frame.size.height);
+    }
+
     // Scrolling Functionality
     CGFloat maxHeight = self.synopsisLabel.frame.origin.y + self.synopsisLabel.frame.size.height + 20.0;
     self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width, maxHeight);
@@ -117,14 +123,19 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    //UIImageView *image = sender;
+    //NSIndexPath *indexPath = [self.posterView indexPathForCell:image];
+    
+    PosterViewController *posterViewController = [segue destinationViewController];
+    posterViewController.movie = self.movie;
 }
-*/
+
 
 @end
