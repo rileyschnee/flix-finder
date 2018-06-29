@@ -2,7 +2,7 @@
 
 Flix Finder is a movies app using the [The Movie Database API](http://docs.themoviedb.apiary.io/#).
 
-Time spent: **X** hours spent in total
+Time spent: 12-13 hours spent in total
 
 ## User Stories
 
@@ -29,11 +29,12 @@ The following **additional** features are implemented:
 
 - [x] User can see release date and average rating on details page.
 - [x] User sees placeholder images while waiting for movie images to load.
+- [x] In the detail view, when the user taps the projector icon, the user can view the trailer.
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1. How to use the database to create you own watchlist. (Saving data)
-2.
+1. How to use the database to create you own watchlist. (Saving list data)
+2. How to design a good UI.
 
 ## Video Walkthrough
 
@@ -45,7 +46,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Implementing the activity indicator and getting the refresh to stop after answering the alert prompt were tricky. It ended up being minor things that I kept overlooking that was causing the issue. For example, my activity indicator was hiding behind my view and I had an extra line of code that was breaking my alert prompt and refresh compatibility.
 
 ## Credits
 
