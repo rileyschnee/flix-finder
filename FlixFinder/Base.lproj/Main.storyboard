@@ -140,7 +140,7 @@
                                         </connections>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O2R-9c-l68">
-                                        <rect key="frame" x="8" y="358" width="359" height="21"/>
+                                        <rect key="frame" x="8" y="367" width="359" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -174,6 +174,17 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nPf-NQ-ZzH">
+                                        <rect key="frame" x="315" y="151" width="60" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.62205862999999995" blue="0.031765669580000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="projector_tabbar_item">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="OZI-Zf-Wr0" kind="show" id="f8i-fu-Wl5"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </scrollView>
@@ -199,6 +210,35 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="917.60000000000002" y="780.35982008995506"/>
+        </scene>
+        <!--Trailer View Controller-->
+        <scene sceneID="Svc-Kb-Lcy">
+            <objects>
+                <viewController id="OZI-Zf-Wr0" customClass="TrailerViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="T5Y-6e-Ma6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView clipsSubviews="YES" alpha="0.0" contentMode="scaleAspectFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zXo-lv-tJj" customClass="UIWebView">
+                                <rect key="frame" x="0.0" y="228" width="375" height="211"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" video="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="YLD-W5-TF6"/>
+                    </view>
+                    <connections>
+                        <outlet property="trailerView" destination="zXo-lv-tJj" id="xYN-JC-oSg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FXi-be-zBK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1592.8" y="1548.5757121439281"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="xdd-8f-3xx">
@@ -334,6 +374,7 @@
         <image name="backdrop-placeholder" width="640" height="360"/>
         <image name="now_playing_tabbar_item" width="21" height="21"/>
         <image name="poster-placeholder" width="567" height="815"/>
+        <image name="projector_tabbar_item" width="21" height="25"/>
         <image name="reel_tabbar_icon" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>

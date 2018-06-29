@@ -9,6 +9,7 @@
 #import "DetailsViewController.h"
 #import "UIImageView+AFNetworking.h"
 #import "PosterViewController.h"
+#import "TrailerViewController.h"
 
 @interface DetailsViewController ()
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -135,6 +136,10 @@
     
     PosterViewController *posterViewController = [segue destinationViewController];
     posterViewController.movie = self.movie;
+    
+    TrailerViewController *trailerViewController = [segue destinationViewController];
+    trailerViewController.movie = self.movie;
+    
 }
 
 
