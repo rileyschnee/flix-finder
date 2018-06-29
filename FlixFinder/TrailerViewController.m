@@ -53,9 +53,10 @@
             NSURL *youtubeURL = [NSURL URLWithString:youtubeURLString];
             NSURLRequest *request = [NSURLRequest requestWithURL:youtubeURL cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
             [self.trailerView loadRequest:request];
-            [UIView animateWithDuration:0.4 animations:^{
+            [UIView animateWithDuration:0.8 delay:1.5 options:UIViewAnimationOptionCurveEaseIn animations:^{
                 self.trailerView.alpha = 1.0;
-            }];
+            } completion:NULL];
+
         }
     }];
     [task resume];
