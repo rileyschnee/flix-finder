@@ -30,6 +30,7 @@ The following **additional** features are implemented:
 - [x] User can see release date and average rating on details page.
 - [x] User sees placeholder images while waiting for movie images to load.
 - [x] In the detail view, when the user taps the projector icon, the user can view the trailer.
+- [x] In the detail view, when the user taps the popcorn icon, the user can view similar movies.
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
@@ -54,6 +55,8 @@ List an 3rd party libraries, icons, graphics, or other assets you used in your a
 
 Poster Placeholder Image: http://www.theprintworks.com/film/raazi/
 Backdrop Placeholder Image: https://www.omao.noaa.gov/find/media/video/noaa-ships-oscar-elton-sette-and-rainier-dry-docking
+Popcorn Icon: https://www.pinterest.com/pin/515169644870731509/
+Projector Icon: https://www.kisspng.com/png-movie-projector-film-computer-icons-projector-982018/
 
 - [AFNetworking](https://github.com/AFNetworking/AFNetworking) - networking task library
 
