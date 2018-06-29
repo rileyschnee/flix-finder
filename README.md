@@ -53,10 +53,16 @@ Implementing the activity indicator and getting the refresh to stop after answer
 
 List an 3rd party libraries, icons, graphics, or other assets you used in your app.
 
+
 Poster Placeholder Image: http://www.theprintworks.com/film/raazi/
+
 Backdrop Placeholder Image: https://www.omao.noaa.gov/find/media/video/noaa-ships-oscar-elton-sette-and-rainier-dry-docking
+
 Popcorn Icon: https://www.pinterest.com/pin/515169644870731509/
+
 Projector Icon: https://www.kisspng.com/png-movie-projector-film-computer-icons-projector-982018/
+
+
 
 - [AFNetworking](https://github.com/AFNetworking/AFNetworking) - networking task library
 
