@@ -20,6 +20,7 @@
 		BEEF6A8920E49B41001DEC97 /* MovieCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEF6A8820E49B41001DEC97 /* MovieCollectionCell.m */; };
 		BEEF6A8C20E5AE40001DEC97 /* PosterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEF6A8B20E5AE40001DEC97 /* PosterViewController.m */; };
 		BEEF6A8F20E6C6C4001DEC97 /* TrailerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEF6A8E20E6C6C4001DEC97 /* TrailerViewController.m */; };
+		BEEF6A9220E6F647001DEC97 /* SimilarMoviesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEF6A9120E6F647001DEC97 /* SimilarMoviesViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,8 @@
 		BEEF6A8B20E5AE40001DEC97 /* PosterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PosterViewController.m; sourceTree = "<group>"; };
 		BEEF6A8D20E6C6C4001DEC97 /* TrailerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TrailerViewController.h; sourceTree = "<group>"; };
 		BEEF6A8E20E6C6C4001DEC97 /* TrailerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TrailerViewController.m; sourceTree = "<group>"; };
+		BEEF6A9020E6F647001DEC97 /* SimilarMoviesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SimilarMoviesViewController.h; sourceTree = "<group>"; };
+		BEEF6A9120E6F647001DEC97 /* SimilarMoviesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimilarMoviesViewController.m; sourceTree = "<group>"; };
 		DF2575AE3C3833F2EB4661DC /* Pods-FlixFinder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlixFinder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FlixFinder/Pods-FlixFinder.debug.xcconfig"; sourceTree = "<group>"; };
 		E25087E79818D81503381585 /* Pods-FlixFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlixFinder.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlixFinder/Pods-FlixFinder.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,6 +127,8 @@
 				BEEF6A8B20E5AE40001DEC97 /* PosterViewController.m */,
 				BEEF6A8D20E6C6C4001DEC97 /* TrailerViewController.h */,
 				BEEF6A8E20E6C6C4001DEC97 /* TrailerViewController.m */,
+				BEEF6A9020E6F647001DEC97 /* SimilarMoviesViewController.h */,
+				BEEF6A9120E6F647001DEC97 /* SimilarMoviesViewController.m */,
 			);
 			path = FlixFinder;
 			sourceTree = "<group>";
@@ -244,6 +249,7 @@
 				BEEF6A4720E4014B001DEC97 /* main.m in Sources */,
 				BEEF6A8320E464A1001DEC97 /* DetailsViewController.m in Sources */,
 				BEEF6A3920E4014A001DEC97 /* AppDelegate.m in Sources */,
+				BEEF6A9220E6F647001DEC97 /* SimilarMoviesViewController.m in Sources */,
 				BEEF6A8920E49B41001DEC97 /* MovieCollectionCell.m in Sources */,
 				BEEF6A8020E452D2001DEC97 /* MovieCell.m in Sources */,
 				BEEF6A8C20E5AE40001DEC97 /* PosterViewController.m in Sources */,
