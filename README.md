@@ -2,7 +2,7 @@
 
 Flix Finder is a movies app using the [The Movie Database API](http://docs.themoviedb.apiary.io/#).
 
-Time spent: **X** hours spent in total
+Time spent: 12-13 hours spent in total
 
 ## User Stories
 
@@ -19,8 +19,8 @@ The following **optional** features are implemented:
 - [x] Movies are displayed using a CollectionView instead of a TableView.
 - [x] User can search for a movie.
 - [x] All images fade in as they are loading.
-- [ ] User can view the large movie poster by tapping on a cell.
-- [ ] For the large poster, load the low resolution image first and then switch to the high resolution image when complete.
+- [x] User can view the large movie poster by tapping on a cell. (BY TAPPING ON POSTER ON DETAILS PAGE)
+- [x] For the large poster, load the low resolution image first and then switch to the high resolution image when complete.
 - [x] Customize the selection effect of the cell.
 - [x] Customize the navigation bar.
 - [x] Customize the UI.
@@ -29,30 +29,39 @@ The following **additional** features are implemented:
 
 - [x] User can see release date and average rating on details page.
 - [x] User sees placeholder images while waiting for movie images to load.
+- [x] In the detail view, when the user taps the projector icon, the user can view the trailer.
+- [x] In the detail view, when the user taps the popcorn icon, the user can view similar movies.
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1.
-2.
+1. How to use the database to create you own watchlist. (Saving list data)
+2. How to design a good UI.
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-
+<img src='https://i.imgur.com/a/A9oyQQp.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Implementing the activity indicator and getting the refresh to stop after answering the alert prompt were tricky. It ended up being minor things that I kept overlooking that was causing the issue. For example, my activity indicator was hiding behind my view and I had an extra line of code that was breaking my alert prompt and refresh compatibility.
 
 ## Credits
 
 List an 3rd party libraries, icons, graphics, or other assets you used in your app.
 
+
 Poster Placeholder Image: http://www.theprintworks.com/film/raazi/
+
 Backdrop Placeholder Image: https://www.omao.noaa.gov/find/media/video/noaa-ships-oscar-elton-sette-and-rainier-dry-docking
+
+Popcorn Icon: https://www.pinterest.com/pin/515169644870731509/
+
+Projector Icon: https://www.kisspng.com/png-movie-projector-film-computer-icons-projector-982018/
+
+
 
 - [AFNetworking](https://github.com/AFNetworking/AFNetworking) - networking task library
 
