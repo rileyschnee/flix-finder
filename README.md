@@ -41,7 +41,16 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
+Full Walkthrough...
 <img src='flixfinder1.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+Collection View and Search Bar Walkthrough...
+<img src='flixfinder2.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+No Network Case Walkthrough...
+<img src='flixfinder3.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
